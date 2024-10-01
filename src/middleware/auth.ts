@@ -20,7 +20,6 @@ export const jwtCheck = auth({
 
 export async function jwtParse(req: Request, res: Response, next: NextFunction) {
     const { authorization } = req.headers
-
     if (!authorization || !authorization.startsWith("Bearer ")) {
         return res.sendStatus(401)
     }

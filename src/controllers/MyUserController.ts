@@ -21,7 +21,7 @@ async function createCurrentUser(req: Request, res: Response) {
 
 async function updateCurrentUser(req: Request, res: Response) {
     try {
-        const { name, adressLine1, city, country } = req.body
+        const { name, addressLine1, city, country } = req.body
         const user = await User.findById(req.userId)
 
         if (!user) {
@@ -29,7 +29,7 @@ async function updateCurrentUser(req: Request, res: Response) {
         }
 
         user.name = name
-        user.adressLine1 = adressLine1
+        user.addressLine1 = addressLine1
         user.city = city
         user.country = country
 
